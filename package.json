@@ -1,0 +1,13 @@
+{
+  "name": "raspberry-pi-web-tvservice",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {}
+}
