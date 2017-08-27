@@ -16,6 +16,12 @@ function displayOff() {
 	});
 }
 
+function disableScreenBlanking() {
+	exec ("export DISPLAY=:0 && xset s off && xset s noblank && xset -dpms", function (error, stdout, stderr) {
+		console.log("Disabled screen blanking");
+	});
+}
+
 app.get('/display-off', function (req, res) {
 	displayOff();
 	res.send("Executed display off");
@@ -50,5 +56,6 @@ app.get('/countdown.json', function (req, res) {
 });
 
 app.listen(3000, function () {
+	disableScreenBlanking();
 	console.log('Node js server running on port 3000!')
 });
