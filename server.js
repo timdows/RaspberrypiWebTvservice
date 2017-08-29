@@ -6,12 +6,14 @@ var isDisplayOff = false;
 
 function displayOn() {
 	exec("tvservice -p", function (error, stdout, stderr) {
+		console.log("Executed tvservice -p");
 		isDisplayOff = false;
 	});
 }
 
 function displayOff() {
 	exec("tvservice -o", function (error, stdout, stderr) {
+		console.log("Executed tvservice -o");
 		isDisplayOff = true;
 	});
 }
