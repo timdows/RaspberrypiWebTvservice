@@ -5,19 +5,19 @@ var exec = require('child_process').exec;
 var isDisplayOff = false;
 
 function displayOn() {
-	exec("sudo tvservice -p", function (error, stdout, stderr) {
+	exec("tvservice -p", function (error, stdout, stderr) {
 		isDisplayOff = false;
 	});
 }
 
 function displayOff() {
-	exec("sudo tvservice -o", function (error, stdout, stderr) {
+	exec("tvservice -o", function (error, stdout, stderr) {
 		isDisplayOff = true;
 	});
 }
 
 function disableScreenBlanking() {
-	exec ("export DISPLAY=:0 && xset s off && xset s noblank && xset -dpms", function (error, stdout, stderr) {
+	exec ("export DISPLAY=:0 && xset s off && xset s noblank && xset -dpms && xset dpms 0 0 0", function (error, stdout, stderr) {
 		console.log("Disabled screen blanking");
 	});
 }
