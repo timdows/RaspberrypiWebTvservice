@@ -14,4 +14,8 @@ node server.js
 ```
 
 ## Usage
-Simply call ip:3000/display-on, ip:3000/display-off of ip:3000/display-on-timer
+Simply call 
+- ip:3000/display-on
+- ip:3000/display-off 
+- ip:3000/display-on-timer
+- ip:3000/countdown.json
