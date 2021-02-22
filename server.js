@@ -5,15 +5,15 @@ var exec = require('child_process').exec;
 var isDisplayOff = false;
 
 function displayOn() {
-	exec("tvservice -p", function (error, stdout, stderr) {
-		console.log("Executed tvservice -p");
+	exec("vcgencmd display_power 1", function (error, stdout, stderr) {
+		console.log("Executed vcgencmd display_power 1");
 		isDisplayOff = false;
 	});
 }
 
 function displayOff() {
-	exec("tvservice -o", function (error, stdout, stderr) {
-		console.log("Executed tvservice -o");
+	exec("vcgencmd display_power 0", function (error, stdout, stderr) {
+		console.log("Executed vcgencmd display_power 0");
 		isDisplayOff = true;
 	});
 }
