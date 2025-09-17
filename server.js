@@ -8,17 +8,17 @@ app.use(cors());
 var isDisplayOff = false;
 
 function displayOn() {
-	exec("vcgencmd display_power 1", function (error, stdout, stderr) {
-		console.log("Executed vcgencmd display_power 1");
-		isDisplayOff = false;
-	});
+        exec("xset dpms force on", function (error, stdout, stderr) {
+                console.log("Executed vcgencmd display_power 1");
+                isDisplayOff = false;
+        });
 }
 
 function displayOff() {
-	exec("vcgencmd display_power 0", function (error, stdout, stderr) {
-		console.log("Executed vcgencmd display_power 0");
-		isDisplayOff = true;
-	});
+        exec("xset dpms force off", function (error, stdout, stderr) {
+                console.log("Executed vcgencmd display_power 0");
+                isDisplayOff = true;
+        });
 }
 
 function disableScreenBlanking() {
